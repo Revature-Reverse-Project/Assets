@@ -17,6 +17,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: jenkins-service
+            name: jenkins-service.devops-tools.svc.cluster.local
             port:
               number: 8080
