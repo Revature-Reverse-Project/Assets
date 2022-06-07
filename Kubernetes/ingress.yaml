@@ -13,10 +13,3 @@ spec:
             name: reverse-angular-service
             port:
               number: 70
-      - path: /jenkins
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: jenkins-service.devops-tools.svc.cluster.local
-            port:
-              number: 8080
