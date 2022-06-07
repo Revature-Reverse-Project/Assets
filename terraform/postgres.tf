@@ -1,11 +1,11 @@
 resource "google_sql_database" "database" {
-  name     = "postgres_db"
-  instance = google_sql_database_instance.db_instance.name
+  name     = "postgres-db"
+  instance = google_sql_database_instance.db-instance.name
 }
 
 
-resource "google_sql_database_instance" "db_instance" {
-  name             = "postgres_instance"
+resource "google_sql_database_instance" "db-instance" {
+  name             = "postgres-instance"
   region           = var.region
   database_version = "POSTGRES_12"
   settings {
