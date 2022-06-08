@@ -22,7 +22,7 @@ spec:
           image: jenkins/jenkins:lts
           env:
             - name: DOCKER_HOST
-              value: tcp://localhost:2376
+              value: tcp://localhost:2375
           # resources:
           #   limits:
           #     memory: "2Gi"
