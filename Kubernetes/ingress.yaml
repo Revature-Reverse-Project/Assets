@@ -6,10 +6,24 @@ spec:
   rules:
   - http:
       paths:
-      - path: /*
+      - path: /
         pathType: ImplementationSpecific
         backend:
           service:
             name: reverse-angular-service
             port:
               number: 70
+      - path: /backend/posts/*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: post-service-service
+            port:
+              number: 80
+      - path: /backend/users/*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: user-service-service
+            port:
+              number: 90
