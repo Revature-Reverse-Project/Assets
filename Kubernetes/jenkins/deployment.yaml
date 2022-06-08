@@ -77,7 +77,6 @@ spec:
       volumes:
       - name: docker-storage
         emptyDir: {}
-      volumes:
-        - name: jenkins-data
-          persistentVolumeClaim:
-              claimName: jenkins-pv-claim
+      - name: jenkins-data
+        persistentVolumeClaim:
+            claimName: jenkins-pv-claim
