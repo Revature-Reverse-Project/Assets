@@ -55,28 +55,28 @@ spec:
             - name: jenkins-data
               mountPath: /var/jenkins_home
         - name: dind-daemon
-              image: docker:18-dind
-              workingDir: /var/lib/docker
-              securityContext:
-                privileged: true
-              volumeMounts:
-              - name: docker-storage
-                mountPath: /var/lib/docker
-              resources:
-                requests:
-                  memory: "300Mi"
-                  cpu: "0.3"
-                limits:
-                  memory: "500Mi"
-                  cpu: "0.5"
-            - name: kubectl
-              image: jshimko/kube-tools-aws:latest
-              command:
-              - cat
-              tty: true
-            volumes:
-            - name: docker-storage
-              emptyDir: {}
+          image: docker:18-dind
+          workingDir: /var/lib/docker
+          securityContext:
+            privileged: true
+          volumeMounts:
+          - name: docker-storage
+            mountPath: /var/lib/docker
+          resources:
+            requests:
+              memory: "300Mi"
+              cpu: "0.3"
+            limits:
+              memory: "500Mi"
+              cpu: "0.5"
+        - name: kubectl
+          image: jshimko/kube-tools-aws:latest
+          command:
+          - cat
+          tty: true
+      volumes:
+      - name: docker-storage
+        emptyDir: {}
       volumes:
         - name: jenkins-data
           persistentVolumeClaim:
